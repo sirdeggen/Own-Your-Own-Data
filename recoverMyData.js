@@ -4,8 +4,8 @@ const ecies = require('electrum-ecies')
 
 // the following mnemonic is random and empty please do not use as it is obviously now compromised, in a real situation you would use your own moneybutton mnemonic from your paper backup.
 
-// mnemonic to HDwallet
-let nemo = Mnemonic.fromString('derive animal kite noble genuine author twice theory silent bless entry near') // <-- Replace with your own Mnemonic
+// mnemonic to HDwallet. Replace words with your own Mnemonic
+let nemo = Mnemonic.fromString('derive animal kite noble genuine author twice theory silent bless entry near')
 
 // HD wallet root private Key
 let hdkey = nemo.toHDPrivateKey()
@@ -30,6 +30,5 @@ let encryptedBase = bsv.util.buffer.hexToBuffer(yourHexData).toString('base64')
 // decrypt using ECIES
 let decryptedContent = ecies.decrypt(encryptedBase, pki.privateKey).toString()
 
-console.log(decryptedContent)
-
 // Then deal with whatever the data is
+console.log(decryptedContent)
